@@ -10,8 +10,10 @@ Currently, two official plugins are available:
 //front end
 
 npm create vite@latest
+npm i react-router-dom
 
 //backend
 
 npm init
 npm i express nodemon
+npm i mongoose
