@@ -1,7 +1,11 @@
+import Project from './pages/Project/project.jsx';
+import Todo from './pages/Todo/todo.jsx';
+
 const App = () => {
   return (
     <>
-      <h1>welcome to the project</h1>
+      {/* <Project></Project> */}
+      <Todo></Todo>
     </>
   );
 };

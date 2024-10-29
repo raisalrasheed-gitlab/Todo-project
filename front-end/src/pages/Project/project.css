@@ -1,0 +1,56 @@
+.project-box {
+  max-width: 90%;
+  margin: 30px auto;
+  /* border: 1px solid black; */
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.project,
+.project-create {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 25px;
+}
+.project-create p {
+  margin-top: 30px;
+}
+.project-create input {
+  width: 150px;
+  height: 30px;
+  border-radius: 4px;
+}
+.project-create button {
+  margin-top: 15px;
+  display: block;
+  margin-left: 80px;
+  padding: 10px;
+  width: 40px;
+  border: none;
+  background-color: #3e7a28;
+  border-radius: 3px;
+}
+.project p {
+  margin-top: 15px;
+}
+.project .name {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 25px;
+  text-decoration: underline;
+}
+.project .c {
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 15px;
+}

@@ -1,0 +1,100 @@
+.task-section {
+  width: 500px;
+  height: 40px;
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.task-section input {
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+  border: 2px solid black;
+  font-family: 'Assistant', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.task-section button {
+  height: 45px;
+  width: 65px;
+  margin-left: 10px;
+  background-color: #bfecff;
+  border-radius: 5px;
+  font-family: 'Roboto Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.task-section button:hover {
+  background-color: #88c273;
+}
+.project-name {
+  margin-left: 150px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.project-name h3 {
+  padding: 5px;
+  border-radius: 2px;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: underline;
+}
+.task-base {
+  width: 80%;
+  height: 60vh;
+  margin: 15px auto;
+  background-color: #f6efbd;
+  border: 1px solid #f6efbd;
+  border-radius: 5px;
+}
+.todo-task {
+  background-color: #e4c087;
+  height: 60px;
+  width: 95%;
+  margin: 10px auto;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-family: 'Rokkitt', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 30px;
+  font-style: normal;
+  position: relative;
+}
+.box {
+  width: 40px;
+  height: 30px;
+}
+.number {
+  margin-left: 15px;
+  font-size: 20px;
+}
+.task {
+  margin-left: 70px;
+}
+.status {
+  font-size: 20px;
+  position: absolute;
+  right: 250px;
+}
+.date {
+  margin-left: 50px;
+  display: inline-block;
+  position: absolute;
+  right: 90px;
+}
+.date div {
+  font-family: 'Rokkitt', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+}

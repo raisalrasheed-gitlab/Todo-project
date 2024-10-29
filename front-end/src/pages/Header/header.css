@@ -1,0 +1,13 @@
+.todo-header {
+  background-color: #88c273;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-header h2 {
+  font-family: 'Roboto Slab', serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
