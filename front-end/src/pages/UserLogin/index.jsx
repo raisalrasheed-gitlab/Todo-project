@@ -27,6 +27,9 @@ const UserLogin = () => {
       console.log(e);
     }
   };
+  const onSignup = () => {
+    navigate('/user/signup');
+  };
 
   console.log(login);
 
@@ -44,6 +47,9 @@ const UserLogin = () => {
       />
       <Button className="user-btn" onClick={onLogin}>
         Login
+      </Button>
+      <Button className="sign-btn" onClick={onSignup}>
+        Signup
       </Button>
     </div>
   );

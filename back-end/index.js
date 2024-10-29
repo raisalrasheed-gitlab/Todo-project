@@ -48,6 +48,7 @@ app.post('/todo/add', checkToken, async (req, res) => {
 
 app.post('/user/signup', async (req, res) => {
   try {
+    console.log('print');
     const { name, email, password } = req.body;
     const user = await User.findOne({ email: email });
     if (user) {
