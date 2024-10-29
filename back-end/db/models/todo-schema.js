@@ -5,7 +5,6 @@ const todoSchema = Schema(
     description: String,
     status: {
       type: String,
-      enum: ['pending', 'completed'],
       default: 'pending',
     },
     projectid: {

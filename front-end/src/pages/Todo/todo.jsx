@@ -35,6 +35,17 @@ const Todo = () => {
       console.log('error');
     }
   };
+  const onCheck = async (value, id) => {
+    try {
+      await axios.patch('/todo/check', {
+        status: value ? 'complete' : 'pending',
+        id: id,
+      });
+      getTodo();
+    } catch {
+      console.log('error');
+    }
+  };
 
   return (
     <>
@@ -59,16 +70,25 @@ const Todo = () => {
           return (
             <>
               <div className="todo-task">
-                <p className="number">No:1</p>
                 <p>
-                  <input className="box" type="checkbox" />
+                  <input
+                    className="box"
+                    type="checkbox"
+                    onChange={e => {
+                      onCheck(e.target.checked, item._id);
+                    }}
+                  />
                 </p>
                 <p className="task">{item.description}</p>
 
                 <div className="date">
-                  <div> status : pending</div>
+                  <div> status : {item.status}</div>
                   <div>created date : {item.createdAt}</div>
                   <div>updated date : {item.updatedAt}</div>
+                </div>
+                <div className="edit">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <i class="fa-solid fa-trash"></i>
                 </div>
               </div>
             </>

@@ -14,6 +14,13 @@ app.use(express.json());
 
 console.log(checkToken);
 
+app.patch('/todo/check', checkToken, async (req, res) => {
+  const status = req.body.status;
+  const id = req.body.id;
+  const todo = await Todo.updateOne({ _id: id }, { status: status });
+  res.status(200).json({ messgae: 'done' });
+});
+
 app.get('/todo', checkToken, async (req, res) => {
   const todo = await Todo.find();
   res.json(todo);
