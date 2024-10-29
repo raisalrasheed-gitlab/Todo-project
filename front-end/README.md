@@ -11,9 +11,11 @@ Currently, two official plugins are available:
 
 npm create vite@latest
 npm i react-router-dom
+npm i axios
+npm i jwt-decode
 
 //backend
 
 npm init
 npm i express nodemon
-npm i mongoose
+npm i mongoose\

@@ -4,10 +4,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .todo-header h2 {
   font-family: 'Roboto Slab', serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
+}
+.header-btn {
+  background-color: red;
+  position: absolute;
+  right: 20px;
+  padding: 10px;
+  border-radius: 4px;
 }

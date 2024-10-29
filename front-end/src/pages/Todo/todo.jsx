@@ -1,14 +1,13 @@
 import './todo.css';
 import { useEffect, useState } from 'react';
-// import axios from '../../utils/axios';
+import axios from '../../utils/axios';
 import Header from '../Header/header.jsx';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Todo = () => {
   const { id } = useParams();
   const [save, setSave] = useState('');
   const [data, setData] = useState([]);
-  const [check, setCheck] = useState('');
 
   const getTodo = async () => {
     axios
@@ -62,11 +61,7 @@ const Todo = () => {
               <div className="todo-task">
                 <p className="number">No:1</p>
                 <p>
-                  <input
-                    className="box"
-                    type="checkbox"
-                    onChange={e => setCheck(e, item._id)}
-                  />
+                  <input className="box" type="checkbox" />
                 </p>
                 <p className="task">{item.description}</p>
 
