@@ -20,6 +20,22 @@ app.patch('/todo/check', checkToken, async (req, res) => {
   const todo = await Todo.updateOne({ _id: id }, { status: status });
   res.status(200).json({ messgae: 'done' });
 });
+app.patch('/todo/:editid', checkToken, async (req, res) => {
+  console.log(req.params.editid);
+  const value = req.body.value;
+  const todo = await Todo.updateOne(
+    { _id: req.params.editid },
+    { description: value }
+  );
+  res.status(200).json(todo);
+});
+
+app.delete('/todo/:id', checkToken, async (req, res) => {
+  console.log(req.params.id);
+
+  const todo = await Todo.deleteOne({ _id: req.params.id });
+  res.status(200).json({ message: 'successfully delete' });
+});
 
 app.get('/todo', checkToken, async (req, res) => {
   const todo = await Todo.find();

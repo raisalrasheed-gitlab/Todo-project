@@ -107,3 +107,23 @@
 .edit i {
   font-size: 20px;
 }
+.edit-window {
+  width: 400px;
+  height: 250px;
+  margin: 120px auto;
+  border: 2px solid black;
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+
+  /* display: none; */
+}
+.edit-window h1 {
+  text-decoration: underline;
+}
+.edit-window button {
+  display: block;
+  margin-left: 160px;
+  margin-top: 25px;
+}

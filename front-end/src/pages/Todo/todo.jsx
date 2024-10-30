@@ -8,6 +8,9 @@ const Todo = () => {
   const { id } = useParams();
   const [save, setSave] = useState('');
   const [data, setData] = useState([]);
+  const [view, setView] = useState(false);
+  const [editid, SetEditId] = useState();
+  const [edit, setEdit] = useState();
 
   const getTodo = async () => {
     axios
@@ -46,11 +49,48 @@ const Todo = () => {
       console.log('error');
     }
   };
+  const onDelete = async id => {
+    console.log(id);
+    try {
+      await axios.delete('/todo/' + id);
+      getTodo();
+    } catch {
+      console.log('eroor in delete');
+    }
+  };
+  const onEdit = async () => {
+    try {
+      await axios.patch('/todo/' + editid, { value: edit });
+      getTodo();
+      setEdit('');
+      setView(false);
+    } catch (error) {
+      console.log('error in update');
+    }
+  };
+  const onBtnEdit = e => {
+    console.log(e);
+    setView(true);
+    SetEditId(e);
+  };
 
   return (
     <>
       <Header></Header>
       <div className="task-section">
+        <div
+          className="edit-window"
+          style={{ display: view ? 'block' : 'none' }}
+        >
+          <h1>Edit</h1>
+          <input
+            value={edit}
+            onChange={e => {
+              setEdit(e.target.value);
+            }}
+          ></input>
+          <button onClick={onEdit}>submit</button>
+        </div>
         <input
           type="text"
           placeholder="Enter your task"
@@ -87,8 +127,18 @@ const Todo = () => {
                   <div>updated date : {item.updatedAt}</div>
                 </div>
                 <div className="edit">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                  <i class="fa-solid fa-trash"></i>
+                  <i
+                    class="fa-solid fa-pen-to-square"
+                    onClick={() => {
+                      onBtnEdit(item._id);
+                    }}
+                  ></i>
+                  <i
+                    onClick={() => {
+                      onDelete(item._id);
+                    }}
+                    class="fa-solid fa-trash"
+                  ></i>
                 </div>
               </div>
             </>
